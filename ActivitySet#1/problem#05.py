@@ -11,19 +11,17 @@ rte = float(input("Enter rate per hour? "))
 p = computepay(hrs, rte)
 print("Pay", p)
 
-score = input("Enter Score: ")
-s =  float(score)
-x = 'Error'
-if s >= 0.9:
-	x = 'A'
-elif s >=0.8:
-	x='B'
-elif s >=0.7:
-	x='C'
-elif s >= 0.6:
-	x='D'
-elif s < .6:
-	x ='F'
-else:
-	x ="Out of Range"
-print (x)
+def computepay(h,r):
+    if h > 40:
+        p = 1.5 * r * (h - 40) + (40 *r)
+    else:
+        p = h * r
+    return p
+    
+hrs = input("Enter Hours:")
+hr = float(hrs)
+rphrs = input("Enter rate per hour:")
+rphr = float(rphrs)
+
+p = computepay(hr,rphr)
+print(p)
